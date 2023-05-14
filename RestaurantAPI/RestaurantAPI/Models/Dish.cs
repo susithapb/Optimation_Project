@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 
 namespace RestaurantAPI.Models
 {
@@ -17,12 +18,12 @@ namespace RestaurantAPI.Models
         public string Description { get; set; }
 
         [Required]
-        public string ImageUrl { get; set; }
+        public byte[] Image { get; set; }
 
         [Required]
         [Range(0.1, double.MaxValue, ErrorMessage = "Price must be greater than zero")]
         public decimal Price { get; set; }
 
-        public int Rating { get; set; }
+        public double Rating { get; set; }
     }
 }

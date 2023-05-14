@@ -54,7 +54,7 @@ namespace RestaurantAPI.Repositories
 
             dishToUpdate.Name = dish.Name;
             dishToUpdate.Description = dish.Description;
-            dishToUpdate.ImageUrl = dish.ImageUrl;
+            dishToUpdate.Image = dish.Image;
             dishToUpdate.Price = dish.Price;
 
             await _dbContext.SaveChangesAsync();

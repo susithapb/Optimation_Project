@@ -5,9 +5,10 @@ namespace RestaurantAPI.Data
 {
     public class DishDbContext : DbContext
     {
-        public DishDbContext(DbContextOptions options) : base(options)
+        private readonly DbContext _dbContext;
+        public DishDbContext(DbContextOptions options, DbContext dbContext) : base(options)
         {
-
+            _dbContext = dbContext;
         }
 
         public virtual DbSet<Dish> Dishes { get; set; }
