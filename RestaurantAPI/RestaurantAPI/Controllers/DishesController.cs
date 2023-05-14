@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantAPI.Data;
 using RestaurantAPI.Helper;
@@ -32,6 +33,7 @@ namespace RestaurantAPI.Controllers
             return Ok(dish);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddNewDish(Dish dish)
         {
@@ -40,6 +42,7 @@ namespace RestaurantAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> UpdateDish(Dish dish)
         {
@@ -52,6 +55,7 @@ namespace RestaurantAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpDelete]
         public async Task<IActionResult> DeleteDish(Dish dish)
         {
