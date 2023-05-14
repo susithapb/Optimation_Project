@@ -22,8 +22,8 @@ namespace RestaurantAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllDishes([FromQuery] Pagination pagination)
         {
-            var courses = await _repository.GetAllAsync(pagination);
-            return Ok(courses);
+            var dishes = await _repository.GetAllAsync(pagination);
+            return Ok(dishes);
         }
 
         [HttpGet]

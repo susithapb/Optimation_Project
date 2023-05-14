@@ -126,7 +126,7 @@ namespace ResturantAPI.Tests
         }
 
         [Fact]
-        public void UpdateCourse_Negative_ReturnBadResult()
+        public void UpdateDishes_Negative_ReturnBadResult()
         {
             //arrange
             Setup();
@@ -172,12 +172,12 @@ namespace ResturantAPI.Tests
         }
 
         [Fact]
-        public void AddCourse_Negative_ReturnBadResult()
+        public void AddDishes_Negative_ReturnBadResult()
         {
             //arrange
             Setup();
 
-            Dish newCourse = new Dish()
+            Dish newDish = new Dish()
             {
                 Id = Guid.Parse("89873496-2d1c-4261-9028-b15ba5bb7fa8"),
                 Name = "Cassoulet",
@@ -188,10 +188,10 @@ namespace ResturantAPI.Tests
             };
 
             //act
-            var result = _controller.AddNewDish(newCourse).Result;
+            var result = _controller.AddNewDish(newDish).Result;
 
             //assert
-            Assert.Equal(newCourse, _dbContextMock.Object.Dishes.Find(newCourse.Id));
+            Assert.Equal(newDish, _dbContextMock.Object.Dishes.Find(newDish.Id));
 
         }
     }
