@@ -17,7 +17,7 @@ namespace RestaurantAPI.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Dish>> GetAllAsync([FromQuery] Pagination pagination)
+        public async Task<IList<Dish>> GetAllAsync([FromQuery] Pagination pagination)
         {
             var pagedData = await _dbContext.Dishes
                     .OrderBy(x => x.Name)

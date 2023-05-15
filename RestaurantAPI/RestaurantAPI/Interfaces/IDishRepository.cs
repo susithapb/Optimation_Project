@@ -5,7 +5,7 @@ namespace RestaurantAPI.Interfaces
 {
     public interface IDishRepository
     {
-        Task<IEnumerable<Dish>> GetAllAsync(Pagination pagination);
+        Task<IList<Dish>> GetAllAsync(Pagination pagination);
 
         Task<Dish> GetByName(string name);  
 
